@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+set -uo pipefail
+
+
+declare -r script="$(readlink -f "${BASH_SOURCE[0]}")"
+declare -r script_dir="$(dirname $script)"
+. "$script_dir"/library.bash
+
+cd "$script_dir" || ferr "could not cd into script dir"
+
+[[ -n $* ]] || { echo "no link given"; exit 1; }
+
+declare -r link="$1"
+declare -r name="${link##*/}"
+declare -r target="../bundle-available-github/$name"
+
+if [[ -d "$target" ]]; then
+    echo "$target already exists!"
+    exit 0
+fi
+
+git clone $link "$target" || ferr "could not clone"
+ln -s "$target" "git-$name" || ferr "could not create link"

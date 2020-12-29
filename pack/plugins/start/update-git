@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+set -uo pipefail
+
+declare -r script="$(readlink -f "${BASH_SOURCE[0]}")"
+declare -r script_dir="$(dirname $script)"
+. "$script_dir"/library.bash
+
+skip=(
+        'YouCompleteMe'
+        'snippets'
+     )
+
+for d in *; do
+    for skip_item in "${skip[@]}"; do
+        declare -r re='.*'"$skip_item"'.*'
+        if [[ "$d" =~ $re ]]; then
+            echo "skipping $d"
+            continue 2
+        fi
+    done
+
+    [[ -e "$d/.git" ]] || continue
+
+    print $d
+    ( cd $d && git pull || git pull origin master ) || { echo "failed to upgrade $d "; exit 1; }
+done

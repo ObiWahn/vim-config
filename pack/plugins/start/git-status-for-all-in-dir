@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+set -uo pipefail
+
+declare -r script="$(readlink -f "${BASH_SOURCE[0]}")"
+declare -r script_dir="$(dirname $script)"
+. "$script_dir"/library.bash
+
+for d in *; do
+    [[ -e "$d/.git" ]] || continue
+    print $d
+    (
+        cd $d
+        echo "$(pwd)"
+        git status
+    )
+done

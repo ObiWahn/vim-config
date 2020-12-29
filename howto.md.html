@@ -1,0 +1,20 @@
+# Vim How To Collection
+
+## Links
+
+- [mananging color](https://gist.github.com/romainl/379904f91fa40533175dfaec4c833f2f)
+- [filetype stuff](https://www.reddit.com/r/vim/wiki/where_to_put_filetype_specific_stuf)
+- [profile debug](https://codeinthehole.com/tips/debugging-vim-by-example/)
+
+
+## Commands
+
+#### show all ycm variables
+`:filter ycm_ let g:`
+
+#### find out what sets the color under the cursor
+lopid │ put the cursor on one of the lines and do :echo synIDattr(synID(line('.'),col('.'),1),'name')
+lopid │ that will show you what highlight it's using
+
+
+<!-- Markdeep: --><style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="markdeep.min.js" charset="utf-8"></script><script src="https://morgan3d.github.io/markdeep/latest/markdeep.min.js" charset="utf-8"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>

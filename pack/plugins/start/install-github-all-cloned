@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+set -uo pipefail
+
+declare -r script="$(readlink -f "${BASH_SOURCE[0]}")"
+declare -r script_dir="$(dirname $script)"
+. "$script_dir"/library.bash
+
+for dir in ../bundle-available-github/*; do
+    name="${dir##*/}"
+    link_name="./git-$name"
+    echo "$name"
+
+    if [[ -d "$dir/.git" ]] && [[ ! -h "$link_name" ]] ; then
+        ln -s "$dir" "$link_name"
+    fi
+
+    echo
+done

@@ -1,0 +1,11 @@
+vimrc-single-file
+
+directories
+spell/*
+pack/plugins/bundle*
+pack/plugins/disabled*
+YouCompleteMe/*
+
+plugin-disabled
+*OLD*
+*pyc
