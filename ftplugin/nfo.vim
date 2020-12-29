@@ -1,0 +1,1 @@
+setl fileencodings=cp437
