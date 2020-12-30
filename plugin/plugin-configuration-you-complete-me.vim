@@ -7,9 +7,9 @@ let g:SuperTabMappingForward = '<NUL>'
 let g:SuperTabMappingBackward = '<S-NUL>'
 
 " set completion type
-"let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 let g:SuperTabDefaultCompletionType = "context"
-let  g:SuperTabContextDefaultCompletionType = "<c-n>"
+let g:SuperTabContextDefaultCompletionType = "<c-p>"
 
 " -----------------------------------------------------------
 " Menus

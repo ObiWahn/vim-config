@@ -18,6 +18,7 @@ plugins=(
     https://github.com/nathanaelkane/vim-indent-guides
     https://github.com/tpope/vim-fugitive
     https://github.com/jremmen/vim-ripgrep
+    https://github.com/ervandew/supertab
 )
 
 for plugin in "${plugins[@]}"; do
