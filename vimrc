@@ -240,6 +240,8 @@ noremap! <silent><F2> <C-O>:tabnext<CR>
 "goto tag
 noremap  <F5>      :YcmCompleter GoTo<CR>
 noremap! <F5> <C-O>:YcmCompleter GoTo<CR>
+noremap  <F6>      :YcmCompleter RefactorRename<CR>
+noremap! <F6> <C-O>:YcmCompleter RefactorRename<CR>
 
 " kill whitespace at end of line: keep search register!!!
 noremap  <F8>      :call Preserve("%s/\\s\\+$//e")<CR>
