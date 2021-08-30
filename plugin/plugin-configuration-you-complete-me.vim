@@ -28,6 +28,7 @@ set completeopt=menuone,menu,longest ",preview
 " YouCompleteMe
 
 let g:ycm_use_clangd = 1
+let g:ycm_clangd_args = [ '--header-insertion=never' ]
 
 let g:ycm_global_ycm_extra_conf = '~/.vim/YouCompleteMe/ycm_extra_conf.py'
 let g:ycm_cache_omnifunc = 1 "default 1
