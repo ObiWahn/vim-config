@@ -265,6 +265,11 @@ noremap <silent><C-C>h :nohls <CR>
 noremap <silent><C-C>c :call ColorColumnToggle()<CR>
 noremap <silent><C-C>b :call Browser()<CR>
 
+"add shortcuts to add and remove quotes
+nnoremap <Leader>q" ciw""<Esc>P
+nnoremap <Leader>q' ciw''<Esc>P
+nnoremap <Leader>qd daW"=substitute(@@,"'\\\|\"","","g")<CR>P
+
 "Y yanks line
 map Y 0y$
 
