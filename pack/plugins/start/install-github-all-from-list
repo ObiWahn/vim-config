@@ -19,6 +19,8 @@ plugins=(
     https://github.com/tpope/vim-fugitive
     https://github.com/jremmen/vim-ripgrep
     https://github.com/ervandew/supertab
+    https://github.com/junegunn/fzf
+    https://github.com/junegunn/fzf.vim
 )
 
 for plugin in "${plugins[@]}"; do
