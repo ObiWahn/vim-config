@@ -273,6 +273,12 @@ nnoremap <Leader>qd daW"=substitute(@@,"'\\\|\"","","g")<CR>P
 "Y yanks line
 map Y 0y$
 
+"shortcut to access p register
+nnoremap  <Leader>y "py
+nnoremap  <Leader>p "pp
+nnoremap  <Leader>d "pd
+nnoremap  <Leader>x "px
+
 "lave insert mode by pressing jk
 inoremap jk <ESC>
 
@@ -330,6 +336,13 @@ let g:spellfile_URL = "http://ftp.vim.org/pub/vim/runtime/spell/"
 command Spe :set spell spelllang=en    | set spellfile="~/.vim/spell/en.utf-8.add"
 command Spd :set spell spelllang=de_de | set spellfile="~/.vim/spell/de.utf-8.add"
 command Spn :set spell spelllang=""
+
+
+"do not update register when deleting singe chars
+noremap x "_x
+
+"do not update reg when pasting in visual mode
+vnoremap p "_dP
 
 noremap <LEADER>le :Spe<CR>
 noremap <LEADER>ld :Spd<CR>
