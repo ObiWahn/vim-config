@@ -34,10 +34,11 @@ let g:ycm_global_ycm_extra_conf = '~/.vim/YouCompleteMe/ycm_extra_conf.py'
 let g:ycm_cache_omnifunc = 1 "default 1
 let g:ycm_disable_for_files_larger_than_kb = 1000 "default 1000
 
+nnoremap <leader>rn :<C-u>YcmCompleter RefactorRename <C-r><C-w>
+
 let g:ycm_semantic_triggers =  {
   \   'c' : ['->', '.'],
-  \   'objc' : ['->', '.', 're!\[[_a-zA-Z]+\w*\s', 're!^\s*[^\W\d]\w*\s',
-  \             're!\[.*\]\s'],
+  \   'objc' : ['->', '.', 're!\[[_a-zA-Z]+\w*\s', 're!^\s*[^\W\d]\w*\s', 're!\[.*\]\s'],
   \   'ocaml' : ['.', '#'],
   \   'cpp,objcpp' : ['->', '.', '::'],
   \   'perl' : ['->'],
