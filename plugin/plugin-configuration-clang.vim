@@ -1,0 +1,1 @@
+../plugin-available/plugin-configuration-clang.vim

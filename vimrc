@@ -237,11 +237,7 @@ noremap! <silent><F1> <C-O>:tabprevious<CR>
 noremap  <silent><F2>      :tabnext<CR>
 noremap! <silent><F2> <C-O>:tabnext<CR>
 
-"goto tag
-noremap  <F5>      :YcmCompleter GoTo<CR>
-noremap! <F5> <C-O>:YcmCompleter GoTo<CR>
-noremap  <F6>      :YcmCompleter RefactorRename<CR>
-noremap! <F6> <C-O>:YcmCompleter RefactorRename<CR>
+" F5 is goto definition
 
 " kill whitespace at end of line: keep search register!!!
 noremap  <F8>      :call Preserve("%s/\\s\\+$//e")<CR>

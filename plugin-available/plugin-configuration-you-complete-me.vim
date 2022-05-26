@@ -26,6 +26,12 @@ set completeopt=menuone,menu,longest ",preview
 
 " -----------------------------------------------------------
 " YouCompleteMe
+"goto tag
+noremap  <F5>      :YcmCompleter GoTo<CR>
+noremap! <F5> <C-O>:YcmCompleter GoTo<CR>
+noremap  <F6>      :YcmCompleter RefactorRename<CR>
+noremap! <F6> <C-O>:YcmCompleter RefactorRename<CR>
+
 
 let g:ycm_use_clangd = 1
 let g:ycm_clangd_args = [ '--header-insertion=never' ]

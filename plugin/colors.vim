@@ -1,0 +1,1 @@
+../plugin-available/colors.vim
