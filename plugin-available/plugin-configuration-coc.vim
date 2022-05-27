@@ -1,4 +1,20 @@
 " coc configuration
+noremap  <silent><F3>        :CocCommand document.jumpToNextSymbol<CR>
+noremap! <silent><F3>   <C-O>:CocCommand document.jumpToNextSymbol<CR>
+noremap  <silent><F4>        :CocCommand document.jumpToPrevSymbol<CR>
+noremap! <silent><F4>   <C-O>:CocCommand document.jumpToPrevSymbol<CR>
+noremap  <silent><F5>        <Plug>(coc-definition)
+noremap! <silent><F5>   <C-O><Plug>(coc-definition)
+noremap  <silent><F8>        <Plug>(coc-rename)
+noremap! <silent><F9>   <C-O><Plug>(coc-rename)
+
+command! -nargs=* -range CocAction :call coc#rpc#notify('codeActionRange', [<line1>, <line2>, <f-args>])
+command! -nargs=* -range CocFix    :call coc#rpc#notify('codeActionRange', [<line1>, <line2>, 'quickfix'])
+
+
+nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
+""" proposed config
+
 " Set internal encoding of vim, not needed on neovim, since coc.nvim using some
 " unicode characters in the file autoload/float.vim
 set encoding=utf-8
@@ -54,15 +70,6 @@ endif
 " format on enter, <cr> could be remapped by other vim plugin
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
-noremap  <silent> <F3>        :CocCommand document.jumpToNextSymbol<CR>
-noremap! <silent> <F3>   <C-O>:CocCommand document.jumpToNextSymbol<CR>
-noremap  <silent> <F4>        :CocCommand document.jumpToPrevSymbol<CR>
-noremap! <silent> <F4>   <C-O>:CocCommand document.jumpToPrevSymbol<CR>
-noremap  <F5>        <Plug>(coc-definition)
-noremap! <F5>   <C-O><Plug>(coc-definition)
-noremap  <F8>        <Plug>(coc-rename)
-noremap! <F9>   <C-O><Plug>(coc-rename)
 
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.

@@ -1,31 +1,103 @@
 {
-	"languageserver": {
-		"coc-clangd": {
-			"command": "clangd",
-			"rootPatterns": [
-				"compile_flags.txt",
-				"compile_commands.json"
-			],
-			"filetypes": [
-				"c",
-				"cc",
-				"cpp",
-				"c++",
-				"objc",
-				"objcpp"
-			]
-		},
-		"cmake": {
-			"command": "cmake-language-server",
-			"filetypes": [
-				"cmake"
-			],
-			"rootPatterns": [
-				"build/"
-			],
-			"initializationOptions": {
-				"buildDirectory": "build"
-			}
-		}
-	}
+    "coc.source.file.enable": true,
+    "coc.source.file.ignoreHidden": false,
+    "diagnostic.checkCurrentLine": true,
+    "languageserver": {
+        "cmake": {
+            "command": "cmake-language-server",
+            "filetypes": [
+                "cmake"
+            ],
+            "rootPatterns": [
+                "build_dir/",
+                "build/"
+            ],
+            "initializationOptions": {
+                "buildDirectory": "build"
+            }
+        }
+    },
+    "clangd.enabled": true,
+    "cmake.lsp.enable": true,
+    "jedi.enable": true,
+    "jedi.startupMessage": true,
+    "sh.enable": true,
+    "diagnostic.enable": true,
+    "diagnostic-languageserver.filetypes": {
+        "cmake": [
+            "cmake-lint",
+            "cmakelint"
+        ],
+        "python": "flake8",
+        "sh": "shellcheck",
+        "systemd": "systemd-analyze"
+    },
+    "diagnostic-languageserver.linters": {
+        "cmake-lint": {
+            "command": "cmake-lint",
+            "debounce": 100,
+            "args": [
+                "--tab-size",
+                "4",
+                "--use-tabchars",
+                "false",
+                "--line-width",
+                "300",
+                "%filepath"
+            ],
+            "offsetLine": 0,
+            "offsetColumn": 1,
+            "sourceName": "cmakelint",
+            "formatLines": 1,
+            "formatPattern": [
+                "^[^:]+:(\\d+)(,(\\d+))?: (\\[(.).*)$",
+                {
+                    "line": 1,
+                    "column": 3,
+                    "message": 4,
+                    "security": 5
+                }
+            ],
+            "securities": {
+                "C": "info",
+                "R": "info",
+                "W": "warning",
+                "E": "error"
+            }
+        },
+        "flake8": {
+            "sourceName": "flake8",
+            "command": "flake8",
+            "debounce": 200,
+            "rootPatterns": [
+                ".git",
+                "pyproject.toml",
+                "setup.py"
+            ],
+            "args": [
+                "--ignore=E402,C901,W503,W504,E116,E702,C0103,C0114,C0115,C0116,C0103,C0301,W0613,W0102,R0903,R0902,R0914,R0915,R0205,W0703,W0702,W0603",
+                "--format=%(row)d,%(col)d,%(code).1s,%(code)s: %(text)s",
+                "-"
+            ],
+            "offsetLine": 0,
+            "offsetColumn": 0,
+            "formatLines": 1,
+            "formatPattern": [
+                "(\\d+),(\\d+),([A-Z]),(.*)(\\r|\\n)*$",
+                {
+                    "line": 1,
+                    "column": 2,
+                    "security": 3,
+                    "message": 4
+                }
+            ],
+            "securities": {
+                "W": "info",
+                "E": "warning",
+                "F": "info",
+                "C": "info",
+                "N": "hint"
+            }
+        }
+    }
 }
