@@ -55,6 +55,15 @@ endif
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
+noremap  <silent> <F3>        :CocCommand document.jumpToNextSymbol<CR>
+noremap! <silent> <F3>   <C-O>:CocCommand document.jumpToNextSymbol<CR>
+noremap  <silent> <F4>        :CocCommand document.jumpToPrevSymbol<CR>
+noremap! <silent> <F4>   <C-O>:CocCommand document.jumpToPrevSymbol<CR>
+noremap  <F5>        <Plug>(coc-definition)
+noremap! <F5>   <C-O><Plug>(coc-definition)
+noremap  <F8>        <Plug>(coc-rename)
+noremap! <F9>   <C-O><Plug>(coc-rename)
+
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
 nmap <silent> [g <Plug>(coc-diagnostic-prev)

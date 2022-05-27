@@ -30,12 +30,17 @@ augroup alleFarben
 
     "Color Column
     autocmd ColorScheme * highlight ColorColumn ctermbg=lightblue guibg=lightblue
+    "autocmd ColorScheme * highlight CursorColumn ctermbg=blue ctermfg=gray guibg=lightblue cterm=NONE
+    autocmd ColorScheme * highlight CursorColumn ctermbg=NONE ctermfg=yellow guibg=lightblue cterm=inverse
 
     " Better Menu Colors
-    autocmd ColorScheme * highlight Pmenu       guifg=darkgray    guibg=darkgreen  ctermfg=0 ctermbg=2
-    autocmd ColorScheme * highlight PmenuSel    guifg=darkgray    guibg=white      ctermfg=0 ctermbg=7
-    autocmd ColorScheme * highlight PmenuSbar   guifg=white       guibg=darkgray   ctermfg=7 ctermbg=0
-    autocmd ColorScheme * highlight PmenuThumb  guifg=darkgray    guibg=white      ctermfg=0 ctermbg=7
+    autocmd ColorScheme * highlight Pmenu       ctermfg=lightgray   ctermbg=black
+    autocmd ColorScheme * highlight PmenuSel    ctermfg=darkgreen   ctermbg=black
+    autocmd ColorScheme * highlight PmenuSbar   ctermfg=darkgreen   ctermbg=black
+    autocmd ColorScheme * highlight PmenuThumb  ctermfg=lightgray   ctermbg=black
+
+    "coc
+    autocmd ColorScheme * highlight FgCocErrorFloatBgCocFloating ctermfg=yellow ctermbg=black
 
     "Spell
     autocmd ColorScheme * highlight SpellBad    term=reverse ctermbg=1 ctermfg=white gui=undercurl guisp=Red
