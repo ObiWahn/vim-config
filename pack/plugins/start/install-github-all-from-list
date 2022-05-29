@@ -22,6 +22,7 @@ plugins=(
     https://github.com/junegunn/fzf
     https://github.com/junegunn/fzf.vim
     https://github.com/neoclide/coc.nvim
+    https://github.com/dhruvasagar/vim-zoom.git
 )
 
 for plugin in "${plugins[@]}"; do
