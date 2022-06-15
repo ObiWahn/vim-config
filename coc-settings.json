@@ -18,7 +18,7 @@
         }
     },
     "clangd.enabled": true,
-    "cmake.lsp.enable": true,
+    "clangd.compilationDatabaseCandidates": ["${CWD}-build/current", "${CWD}-build" ,"${CWD}/build"],
     "jedi.enable": true,
     "jedi.startupMessage": true,
     "sh.enable": true,
