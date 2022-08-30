@@ -1,18 +1,19 @@
 #!/bin/bash
 set -uo pipefail
 
-declare -r script="$(readlink -f "${BASH_SOURCE[0]}")"
-declare -r script_dir="$(dirname $script)"
+script="$(readlink -f "${BASH_SOURCE[0]}")"
+script_dir="$(dirname "$script")"
 . "$script_dir"/library.bash
 
 cd "$script_dir" || ferr "could not cd into script dir"
+
+#https://github.com/ctrlpvim/ctrlp.vim
 
 plugins=(
     https://github.com/ObiWahn/vim-airline
     https://github.com/editorconfig/editorconfig-vim
     https://github.com/inside/vim-grep-operator
     https://github.com/farmergreg/vim-lastplace
-    https://github.com/ctrlpvim/ctrlp.vim
     https://github.com/ycm-core/YouCompleteMe
     https://github.com/scrooloose/nerdtree
     https://github.com/nathanaelkane/vim-indent-guides
@@ -23,6 +24,7 @@ plugins=(
     https://github.com/junegunn/fzf.vim
     https://github.com/neoclide/coc.nvim
     https://github.com/dhruvasagar/vim-zoom.git
+    https://github.com/ericcurtin/CurtineIncSw.vim
 )
 
 for plugin in "${plugins[@]}"; do
