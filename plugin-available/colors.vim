@@ -13,6 +13,9 @@
 
 " THIS MUST HAPPEN BEFORE COLORSCHEME IS SET
 " Set Whitespace Color!
+"
+" show all groups
+" :so $VIMRUNTIME/syntax/hitest.vim
 
 augroup alleFarben
     au!
@@ -41,6 +44,10 @@ augroup alleFarben
 
     "coc
     autocmd ColorScheme * highlight FgCocErrorFloatBgCocFloating ctermfg=yellow ctermbg=black
+	autocmd ColorScheme * highlight CocPum        ctermfg=lightgray   ctermbg=black
+	autocmd ColorScheme * highlight CocSymbol     ctermfg=lightgray   ctermbg=black
+	autocmd ColorScheme * highlight CocMenuSel    ctermfg=darkgreen   ctermbg=black
+    autocmd ColorScheme * highlight CocPumSearch  ctermfg=white
 
     "Spell
     autocmd ColorScheme * highlight SpellBad    term=reverse ctermbg=1 ctermfg=white gui=undercurl guisp=Red

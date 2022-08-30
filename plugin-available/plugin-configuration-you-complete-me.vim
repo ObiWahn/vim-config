@@ -29,8 +29,8 @@ set completeopt=menuone,menu,longest ",preview
 "goto tag
 noremap  <F5>      :YcmCompleter GoTo<CR>
 noremap! <F5> <C-O>:YcmCompleter GoTo<CR>
-noremap  <F6>      :YcmCompleter RefactorRename<CR>
-noremap! <F6> <C-O>:YcmCompleter RefactorRename<CR>
+noremap  <F8>      :YcmCompleter RefactorRename<CR>
+noremap! <F8> <C-O>:YcmCompleter RefactorRename<CR>
 
 
 let g:ycm_use_clangd = 1
