@@ -130,6 +130,8 @@ set foldlevel=99
 if has("patch-8.1.0360")
     set diffopt+=internal,algorithm:patience
 endif
+
+:set makeprg=omake\ $*
 " -----------------------------------------------------------
 " Workarounds and fixes
 
