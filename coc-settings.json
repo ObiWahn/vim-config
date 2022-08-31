@@ -2,6 +2,9 @@
     "coc.source.file.enable": true,
     "coc.source.file.ignoreHidden": false,
     "diagnostic.checkCurrentLine": true,
+    "diagnostic.errorSign": "EE",
+    "diagnostic.warningSign": "WW",
+    "diagnostic.infoSign": "II",
     "languageserver": {
         "cmake": {
             "command": "cmake-language-server",
