@@ -233,6 +233,15 @@ command -nargs=1 T  :setl textwidth=<args> | :setl nopaste | :setl wrap | :setl 
 " -----------------------------------------------------------
 " KeyMapping
 
+" fold with space
+nnoremap <space> za
+
+" search
+nnoremap <space>% :%s/\<<C-r>=expand("<cword>")<CR>\>/
+xnoremap <space>% y:%s/<C-r>=escape(@", '^~$\&*.[]')<CR>//g<left><left>
+nnoremap <space>/ /<C-r>=expand("<cword>")<CR>
+xnoremap <space>/ y/<C-R>"
+
 " tabs
 noremap  <silent><F1>      :tabprevious<CR>
 noremap! <silent><F1> <C-O>:tabprevious<CR>
@@ -242,15 +251,15 @@ noremap! <silent><F2> <C-O>:tabnext<CR>
 " F5 is goto definition
 
 " kill whitespace at end of line: keep search register!!!
-noremap  <F8>      :call Preserve("%s/\\s\\+$//e")<CR>
-noremap! <F8> <C-o>:call Preserve("%s/\\s\\+$//e")<CR>
+noremap  <F11>      :call Preserve("%s/\\s\\+$//e")<CR>
+noremap! <F11> <C-o>:call Preserve("%s/\\s\\+$//e")<CR>
 
 set pastetoggle=<F9>
 
-noremap  <F10>      :cn<CR>
-noremap! <F10> <C-o>:cn<CR>
-noremap  <F11>      :cp<CR>
-noremap! <F11> <C-o>:cp<CR>
+"noremap  <F10>      :cn<CR>
+"noremap! <F10> <C-o>:cn<CR>
+"noremap  <F11>      :cp<CR>
+"noremap! <F11> <C-o>:cp<CR>
 " F12 taken by tmux
 
 " CTRL-C shortcuts

@@ -1,1 +1,0 @@
-../plugin-available/plugin-configuration-CurtineIncSw.vim

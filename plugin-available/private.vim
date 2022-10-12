@@ -14,8 +14,14 @@ iabbrev j@@             Jan@UhdeJC.com
 iabbrev <expr> ccopy    'Copyright - ' . strftime('%Y') . ' - Jan Christoph Uhde <Jan@UhdeJC.com>'
 
 iabbrev mfg     Mit freundlichen Grüßen<CR>Jan Christoph Uhde
+iabbrev regards Regards<CR><CR>Jan
 iabbrev ocheers Cheers!<CR>Obi
 
 map ,re  o<CR>Regards<CR><CR>  Jan Christoph Uhde<ESC>
 map ,mfg o<CR>Mit freundlichen Grüßen,<CR><CR>  Jan Christoph Uhde<ESC>
 map ,gr  o<CR>Grüße!<CR><CR>  Obi<ESC>
+
+nnoremap <Leader>oc :e %<.cpp<CR>
+nnoremap <Leader>oC :e %<.c<CR>
+nnoremap <Leader>oh :e %<.h<CR>
+nnoremap <Leader>oH :e %<.hpp<CR>
