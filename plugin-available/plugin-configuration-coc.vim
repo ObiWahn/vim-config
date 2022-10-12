@@ -10,6 +10,9 @@ noremap  <silent><F4>        :CocCommand document.jumpToPrevSymbol<CR>
 noremap! <silent><F4>   <C-O>:CocCommand document.jumpToPrevSymbol<CR>
 noremap  <silent><F5>        <Plug>(coc-definition)
 noremap! <silent><F5>   <C-O><Plug>(coc-definition)
+noremap  <silent><F6>        :<C-u>CocCommand clangd.switchSourceHeader<CR>
+noremap! <silent><F6>   <C-O>:<C-u>CocCommand clangd.switchSourceHeader<CR>
+
 noremap  <silent><F8>        <Plug>(coc-rename)
 noremap! <silent><F9>   <C-O><Plug>(coc-rename)
 
@@ -17,7 +20,7 @@ command! -nargs=* -range CocAction :call coc#rpc#notify('codeActionRange', [<lin
 command! -nargs=* -range CocFix    :call coc#rpc#notify('codeActionRange', [<line1>, <line2>, 'quickfix'])
 
 
-nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
+nnoremap <silent> <space>y  :<C-u>CocList -A --normal --reverse yank<cr>
 """ proposed config
 
 " Set internal encoding of vim, not needed on neovim, since coc.nvim using some
@@ -101,6 +104,7 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gh :<C-u>CocCommand clangd.switchSourceHeader<CR>
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call ShowDocumentation()<CR>
