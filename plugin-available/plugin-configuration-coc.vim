@@ -8,13 +8,13 @@ noremap  <silent><F3>        :CocCommand document.jumpToNextSymbol<CR>
 noremap! <silent><F3>   <C-O>:CocCommand document.jumpToNextSymbol<CR>
 noremap  <silent><F4>        :CocCommand document.jumpToPrevSymbol<CR>
 noremap! <silent><F4>   <C-O>:CocCommand document.jumpToPrevSymbol<CR>
-noremap  <silent><F5>        <Plug>(coc-definition)
-noremap! <silent><F5>   <C-O><Plug>(coc-definition)
+map      <silent><F5>        <Plug>(coc-definition)
+map!     <silent><F5>   <C-O><Plug>(coc-definition)
 noremap  <silent><F6>        :<C-u>CocCommand clangd.switchSourceHeader<CR>
 noremap! <silent><F6>   <C-O>:<C-u>CocCommand clangd.switchSourceHeader<CR>
 
-noremap  <silent><F8>        <Plug>(coc-rename)
-noremap! <silent><F9>   <C-O><Plug>(coc-rename)
+map      <silent><F8>        <Plug>(coc-rename)
+map!     <silent><F9>   <C-O><Plug>(coc-rename)
 
 command! -nargs=* -range CocAction :call coc#rpc#notify('codeActionRange', [<line1>, <line2>, <f-args>])
 command! -nargs=* -range CocFix    :call coc#rpc#notify('codeActionRange', [<line1>, <line2>, 'quickfix'])
