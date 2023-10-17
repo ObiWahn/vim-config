@@ -8,7 +8,7 @@ let g:clang_complete_auto = 1
 "let g:clang_complete_copen = 1 "open
 let g:clang_close_preview = 1  "autoclose
 let g:clang_hl_errors = 1      "clang highlite
-let g:clang_user_options="-std=c++17"
+let g:clang_user_options="-std=c++20"
 let g:clang_jumpto_declaration_key="<C-q>]"
 
 " snipmate
@@ -20,7 +20,8 @@ let g:clang_complete_macros = 1
 let g:clang_complete_patterns = 1
 
 """" clang format
-let g:clang_format#command = '/usr/bin/obi-clang-format'
+"let g:clang_format#command = '/usr/bin/obi-clang-format'
+let g:clang_format#command = '/usr/bin/clang-format-14'
 let g:clang_format#style_options = {
             \ "UseTab" : "Never",
             \ "IndentWidth" : 4,
@@ -33,7 +34,7 @@ let g:clang_format#style_options = {
             \ "DerivePointerBinding" : "false",
             \ "PointerBindsToType" : "true"}
 
-" \ "Standard" : "C++11"}
+" \ "Standard" : "C++20"}
 
 " if you install vim-operator-user
 augroup clang-format

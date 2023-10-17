@@ -1,6 +1,8 @@
 vimrc-single-file
 
+todo
 directories
+sessions
 spell/*
 pack/plugins/bundle*
 pack/plugins/disabled*
