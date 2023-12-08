@@ -4,7 +4,7 @@ target="vimrc-single-file"
 
 cat vimrc > $target
 
-for f in plugin-single-config/* plugin/*; do
+for f in configuration/single-file/* configuration/used/*; do
     case $f in
         *plugin-configuration*|*private*)
             echo skipping $f >&2

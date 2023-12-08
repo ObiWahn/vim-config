@@ -4,17 +4,20 @@ todo
 directories
 sessions
 spell/*
-pack/plugins/bundle*
-pack/plugins/disabled*
-YouCompleteMe/ycmd-obi
 
-pack/plugins/start/git-supertab
-pack/plugins/start/git-YouCompleteMe
+configuration/disabled
+configuration/unused
 plugin/plugin-configuration-coc.vim
-pack/plugins/start/git-coc.nvim
 plugin/plugin-configuration-you-complete-me.vim
 
-plugin-disabled
-plugin-unused
+pack/plugins/bundle*
+pack/plugins/disabled*
+pack/plugins/start/git-supertab
+pack/plugins/start/git-YouCompleteMe
+pack/plugins/start/git-coc.nvim
+
+
 *OLD*
 *pyc
+
+YouCompleteMe/ycmd-obi

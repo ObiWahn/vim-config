@@ -1,0 +1,1 @@
+../available/german-keyboard.vim

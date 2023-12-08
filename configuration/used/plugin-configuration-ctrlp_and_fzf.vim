@@ -1,0 +1,1 @@
+../available/plugin-configuration-ctrlp_and_fzf.vim
