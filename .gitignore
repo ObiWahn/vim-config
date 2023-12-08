@@ -10,7 +10,8 @@ configuration/unused
 plugin/plugin-configuration-coc.vim
 plugin/plugin-configuration-you-complete-me.vim
 
-pack/plugins/bundle*
+bundles/disabled*
+bundles/available*
 pack/plugins/disabled*
 pack/plugins/start/git-supertab
 pack/plugins/start/git-YouCompleteMe
