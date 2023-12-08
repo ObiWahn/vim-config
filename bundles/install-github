@@ -12,7 +12,7 @@ cd "$script_dir" || ferr "could not cd into script dir"
 
 github_url="$1"
 name="${github_url##*/}"
-repo_path="../bundle-available-github/$name"
+repo_path="./available-github/$name"
 
 if [[ -d "$repo_path" ]]; then
     echo "$repo_path already exists!"

@@ -1,16 +1,50 @@
 #!/usr/bin/env bash
 set -uo pipefail
 
+fetch=true
+if [[ $1 == --no-fetch ]]; then
+    fetch=false
+fi
+
 declare -r script="$(readlink -f "${BASH_SOURCE[0]}")"
 declare -r script_dir="$(dirname $script)"
 . "$script_dir"/library.bash
 
-for d in *; do
+export fetch
+for d in  ./start/* ; do
     [[ -e "$d/.git" ]] || continue
-    print $d
     (
-        cd $d
-        echo "$(pwd)"
-        git status
+        cd "$d" || exit 1
+        print "$d"
+        $fetch && git fetch &> /dev/null
+
+        local_rev="$(git rev-parse @)"
+        remote_rev="$(git rev-parse @{u})"
+
+
+        LOCAL_BRANCH="$(git branch --show-current)"
+        TRACKING_BRANCH="$(git config branch.$LOCAL_BRANCH.merge)"
+        TRACKING_BRANCH="${TRACKING_BRANCH##*/}"
+        TRACKING_REMOTE="$(git config branch.$LOCAL_BRANCH.remote)"
+        REMOTE_URL="$(git config remote.$TRACKING_REMOTE.url)"
+
+        print_status=false
+        #if [[ $LOCAL_BRANCH != master ]] && [[ $LOCAL_BRANCH != main ]] && [[ $LOCAL_BRANCH != stable ]] ; then
+        #    echo "## LOCAL_BRANCH: $LOCAL_BRANCH ##"
+        #    print_status=true
+        if [[ $TRACKING_BRANCH != master ]] && [[ $TRACKING_BRANCH != main ]] && [[ $TRACKING_BRANCH != stable ]] ; then
+            echo "## TRACKING_BRANCH: $TRACKING_BRANCH ##"
+            print_status=true
+        elif [[ $LOCAL_BRANCH != "$TRACKING_BRANCH" ]] ; then
+            echo "## $LOCAL_BRANCH !=  $TRACKING_BRANCH ##"
+            print_status=true
+        elif [[ $local_rev != "$remote_rev" ]]; then
+            echo "## $local_rev != $remote_rev" ##
+            print_status=true
+        fi
+
+        if $print_status; then
+            $print_status && git status
+        fi
     )
 done

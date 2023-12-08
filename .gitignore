@@ -22,3 +22,5 @@ pack/plugins/start/git-coc.nvim
 *pyc
 
 YouCompleteMe/ycmd-obi
+
+.netrw*

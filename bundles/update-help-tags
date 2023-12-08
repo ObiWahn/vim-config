@@ -5,7 +5,7 @@ declare -r script="$(readlink -f "${BASH_SOURCE[0]}")"
 declare -r script_dir="$(dirname $script)"
 . "$script_dir"/library.bash
 
-for dir in * ; do
+for dir in ./start/* ; do
     if [ -d "$dir/doc" ]; then
         echo "helptags $dir/doc/"
         vim -c "helptags $dir/doc/" -c q

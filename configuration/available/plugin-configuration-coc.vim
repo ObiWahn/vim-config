@@ -57,9 +57,6 @@ inoremap <expr> <C-j> coc#pum#visible() ? coc#pum#next(1) : "\<C-J>"
 inoremap <expr> <C-k> coc#pum#visible() ? coc#pum#prev(1) : "\<C-K>"
 
 
-
-
-
 "form :h coc-complete-example
 "Use <tab> and <S-tab> to navigate completion list:
 

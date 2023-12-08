@@ -5,32 +5,38 @@ ferr(){
     exit 1
 }
 
+bundle_start="$HOME/.vim/bundles/start"
+bundle_avai="../available-github"
+
+conf_used="$HOME/.vim/configuration/used"
+conf_avai="../available"
+
 disable_all(){
     rm -f \
-        ~/.vim/pack/plugins/start/git-supertab \
-        ~/.vim/pack/plugins/start/git-YouCompleteMe \
-        ~/.vim/plugin/plugin-configuration-you-complete-me.vim \
-        ~/.vim/pack/plugins/start/git-coc.nvim \
-        ~/.vim/plugin/plugin-configuration-coc.vim
+        $bundle_start/git-supertab \
+        $bundle_start/git-YouCompleteMe \
+        $bundle_start/git-coc.nvim \
+        $conf_used/plugin-configuration-you-complete-me.vim \
+        $conf_used/plugin-configuration-coc.vim
 }
 
 enable_ycm(){
-    cd ~/.vim/pack/plugins/start || ferr "can not cd"
-    ln -s ../bundle-available-github/supertab git-supertab || ferr
+    cd $bundle_start || ferr "can not cd"
+    ln -s $bundle_avai/supertab git-supertab || ferr
 
-    cd ~/.vim/pack/plugins/start || ferr "can not cd"
-    ln -s ../bundle-available-github/YouCompleteMe git-YouCompleteMe || ferr
+    cd $bundle_start || ferr "can not cd"
+    ln -s $bundle_avai/YouCompleteMe git-YouCompleteMe || ferr
 
-    cd ~/.vim/plugin/ || ferr "can not cd"
-    ln -s ../plugin-available/plugin-configuration-you-complete-me.vim . || ferr
+    cd $conf_used || ferr "can not cd"
+    ln -s $conf_avai/plugin-configuration-you-complete-me.vim . || ferr
 }
 
 enable_coc(){
-    cd ~/.vim/pack/plugins/start || ferr "can not cd"
-    ln -s ../bundle-available-github/coc.nvim git-coc.nvim || ferr
+    cd $bundle_start || ferr "can not cd"
+    ln -s $bundle_avai/coc.nvim git-coc.nvim || ferr
 
-    cd ~/.vim/plugin/ || ferr "can not cd"
-    ln -s ../plugin-available/plugin-configuration-coc.vim . || ferr
+    cd $conf_used || ferr "can not cd"
+    ln -s $conf_avai/plugin-configuration-coc.vim . || ferr
 }
 
 completer=${1:-ycm}

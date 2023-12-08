@@ -5,21 +5,26 @@ declare -r script="$(readlink -f "${BASH_SOURCE[0]}")"
 declare -r script_dir="$(dirname "$script")"
 . "$script_dir"/library.bash
 
+plug_dir="./start"
+
 skip=(
-        git-YouCompleteMe
         git-vim-airline
+        git-YouCompleteMe
      )
 
-for d in *; do
+for d in "$plug_dir/"* ; do
     [[ -e "$d/.git" ]] || continue
     print "$d"
 
     for skip_item in "${skip[@]}"; do
-        if [[ "$d" == "$skip_item" ]]; then
+        if [[ "$d" == "$plug_dir/$skip_item" ]]; then
             echo "skipping $d"
             continue 2
         fi
     done
 
-    ( cd "$d" && git pull || git pull origin master ) || { echo "failed to upgrade $d "; exit 0; }
+    ( \
+        cd "$d" && { git fetch  &>/dev/null || { ehco "could not fetch"; exit 1; }; }  && git merge --ff-only @{u} \
+    ) \
+    || { echo "failed to upgrade $d "; }
 done
