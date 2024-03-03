@@ -2,6 +2,7 @@
     "signature.enable": true,
     "coc.source.file.enable": true,
     "coc.source.file.ignoreHidden": false,
+    "coc.preferences.jumpCommand": "tab drop",
     "diagnostic.checkCurrentLine": true,
     "diagnostic.errorSign": "EE",
     "diagnostic.warningSign": "WW",

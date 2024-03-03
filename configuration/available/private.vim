@@ -17,7 +17,7 @@ iabbrev mfg     Mit freundlichen Grüßen<CR>Jan Christoph Uhde
 iabbrev regards Regards<CR><CR>Jan
 iabbrev ocheers Cheers!<CR>Obi
 
-map ,re  o<CR>Regards<CR><CR>  Jan Christoph Uhde<ESC>
+"map ,re  o<CR>Regards<CR><CR>  Jan Christoph Uhde<ESC>
 map ,mfg o<CR>Mit freundlichen Grüßen,<CR><CR>  Jan Christoph Uhde<ESC>
 map ,gr  o<CR>Grüße!<CR><CR>  Obi<ESC>
 

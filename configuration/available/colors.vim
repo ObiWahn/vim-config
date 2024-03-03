@@ -49,6 +49,7 @@ augroup alleFarben
 	autocmd ColorScheme * highlight CocMenuSel    ctermfg=darkgreen   ctermbg=black
     autocmd ColorScheme * highlight CocPumSearch  ctermfg=white
     autocmd ColorScheme * highlight CocInlayHint  ctermfg=lightblue   ctermbg=8
+    autocmd ColorScheme * highlight CocSearch     ctermfg=lightyellow
 
     "Spell
     autocmd ColorScheme * highlight SpellBad    term=reverse ctermbg=1 ctermfg=white gui=undercurl guisp=Red
