@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -uo pipefail
 
-script="$(readgithub_url -f "${BASH_SOURCE[0]}")"
+script="$(readlink -f "${BASH_SOURCE[0]}")"
 script_dir="$(dirname "$script")"
 . "$script_dir"/library.bash
 
