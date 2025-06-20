@@ -21,10 +21,10 @@ let g:clang_complete_patterns = 1
 
 """" clang format
 "let g:clang_format#command = '/usr/bin/obi-clang-format'
-let g:clang_format#command = '/usr/bin/clang-format-15'
+let g:clang_format#command = '/usr/bin/clang-format-19'
+"            \ "UseTab" : "Never",
+"            \ "IndentWidth" : 4,
 let g:clang_format#style_options = {
-            \ "UseTab" : "Never",
-            \ "IndentWidth" : 4,
             \ "BreakBeforeBraces" : "Allman",
             \ "IndentCaseLabels": "false",
             \ "ColumnLimit" : 80,
