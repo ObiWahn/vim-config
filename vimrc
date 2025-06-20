@@ -71,6 +71,7 @@ set tabpagemax=100
 
 "" INDENT
 set shiftwidth=4        "length of std indent
+set shiftround
 set autoindent          " always set autoindenting on
 "set smartindent
 "set cinoptions=>s,e0,n0,f0,{0,}0,^0,L-1,:s,=s,l0,b0,gs,hs,ps,ts,is,+s,c3,C0,/0,(2s,us,U0,w0,W0,m0,j0,J0,)20,*70,#0
@@ -108,6 +109,9 @@ set showmatch       " Show matching brackets.
 set hlsearch        " hilight searched stuff
 set vb t_vb=        " disable visual bell
 
+" ----------------------------------------------------------
+" Add Packs
+"packadd! editorconfig
 " -----------------------------------------------------------
 " Mouse
 
