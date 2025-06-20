@@ -22,11 +22,14 @@
             }
         }
     },
+    "rust-analyzer.enable": true,
+    "rust-analyzer.debug.runtime": "termdebug",
+    "rust-analyzer.server.path": "/home-nvme/oberon/.cargo/bin/rust-analyzer",
     "clangd.enabled": true,
     "clangd.compilationDatabaseCandidates": ["${workspaceFolder}-build/current", "${workspaceFolder}-build" ,"${workspaceFolder}/build", "${workspaceFolder}/build_dir" ],
-    "clangd.fallbackFlags": ["-std=gnu++23"],
-    "clangd.path": "/usr/bin/clangd-17",
-    "clangd.trace.server":"off",
+    "clangd.fallbackFlags": ["-std=gnu++2b"],
+    "clangd.path": "/usr/bin/clangd-19",
+    "clangd.trace.server":"verbose",
     "clangd.trace.file": "/tmp/user/1000/clangd-trace",
     "clangd.arguments": ["-header-insertion=never", "--log=info", "--pretty"],
     "inlayHint.enable": false,
