@@ -1,5 +1,7 @@
 " words to hgihlight
 call matchadd("todo","Note")
+call matchadd("todo","NOTE")
+call matchadd("todo","ATTENTION")
 call matchadd("todo","TODO")
 call matchadd("todo","OBI")
 call matchadd("todo","BUG")
