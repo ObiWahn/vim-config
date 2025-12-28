@@ -12,7 +12,7 @@ for dir in ./available-github/*; do
     echo "$name"
 
     if [[ -d "$dir/.git" ]] && [[ ! -h "$link_name" ]] ; then
-        ln -s "$dir" "$link_name"
+        ln -s ".$dir" "$link_name"
     fi
 
     echo
